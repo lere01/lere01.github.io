@@ -16,6 +16,7 @@ enableSearch = true
 enableCodeCopy = true
 enableImageLazyLoading = true
 enableImageWebp = true
+customCSS = ["css/custom.css"]
 
 # robots = ""
 fingerprintAlgorithm = "sha256"

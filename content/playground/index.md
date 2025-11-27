@@ -1,5 +1,4 @@
 ---
-title: "Sampling Playground"
 menu: "main"
 date: "2025-11-18"
 weight: 30
