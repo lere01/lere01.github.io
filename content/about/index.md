@@ -133,7 +133,7 @@ Engineering, Mathematics, Medicine and Health.
 **Selected Topics in Physics · Mixed graduate/undergraduate course**
 
 Invited by the course instructor, based on my research specialization, to
-deliver an 80-minute lecture on the MLP-Mixer architecture to fourth-year
+deliver an 80-minute lecture on the MLP-Mixer architecture to a mix of graduate and undergraduate
 physics students. The lecture developed the architecture from its token- and
 channel-mixing operations and connected the model to applications in physics.
 
