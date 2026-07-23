@@ -2,10 +2,18 @@
 # layouts/partials/home/custom.html. When a project joins, also add it to
 # the design system's nav (partials/nav.js there) and cut a design tag.
 - name: qslib
+  type: Scientific computing library
   lang: Rust · Python
   description: >-
     Quantum simulation crate family — SSE quantum Monte Carlo, variational
     diagnostics, deterministic seeding. Published to crates.io and PyPI.
+  contribution: >-
+    Designed as a reusable foundation for reproducible quantum-simulation
+    workflows across Rust and Python.
+  capabilities:
+    - Stochastic-series-expansion quantum Monte Carlo
+    - Variational diagnostics and deterministic seeding
+    - Packages for both the Rust and Python ecosystems
   links:
     - label: guide
       url: https://lere01.github.io/qslib/
@@ -16,10 +24,18 @@
     - label: source
       url: https://github.com/lere01/qslib
 - name: sse
+  type: Quantum simulation CLI
   lang: Rust
   description: >-
     Stochastic series expansion QMC for transverse-field Ising and Rydberg
     lattices — a thin CLI over qslib with reproducible run manifests.
+  contribution: >-
+    Built a focused command-line workflow over qslib so simulations can be
+    configured, repeated, and audited through explicit run manifests.
+  capabilities:
+    - Transverse-field Ising and Rydberg lattice models
+    - Reproducible run manifests
+    - User guide and generated API documentation
   links:
     - label: guide
       url: https://lere01.github.io/sse/
@@ -28,18 +44,34 @@
     - label: source
       url: https://github.com/lere01/sse
 - name: sse demo
+  type: Interactive scientific application
   lang: WebAssembly
   description: >-
     The full SSE engine compiled to WebAssembly — ground-state estimates
     for lattices up to 6×6 in the browser, bit-for-bit identical to the CLI.
+  contribution: >-
+    Compiled the simulation engine to WebAssembly, making the same scientific
+    implementation available as an immediate browser-based demonstration.
+  capabilities:
+    - Runs the Rust engine directly in the browser
+    - Supports lattices up to 6×6
+    - Matches the command-line implementation bit for bit
   links:
     - label: launch
       url: https://lere01.github.io/sse/demo/
 - name: sampling playground
+  type: Machine-learning research tool
   lang: on this site
   description: >-
     Draw Monte Carlo samples from pretrained neural quantum state models,
     inspect configurations, and download the datasets.
+  contribution: >-
+    Created an accessible interface for exploring the output of trained neural
+    quantum states without requiring a local research environment.
+  capabilities:
+    - Multiple Hamiltonians, lattice sizes, and architectures
+    - Configuration previews and observable summaries
+    - Downloadable JSON and CSV datasets
   links:
     - label: open
       url: /playground/

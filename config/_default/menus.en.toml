@@ -16,8 +16,8 @@
   weight = 10
 
 [[main]]
-  name = "About"
-  pageRef = "about"
+  name = "Projects"
+  pageRef = "projects"
   weight = 20
 
 [[main]]
@@ -26,9 +26,14 @@
   weight = 30
 
 [[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 40
+
+[[main]]
   name = "Sampling Playground"
   pageRef = "playground"
-  weight = 40
+  weight = 50
 
 # [[main]]
 #   name = "Categories"

@@ -1,6 +1,8 @@
 ---
 title: "About & Résumé"
-description: "Research, software engineering, education, and technical skills."
+description: "Research, software engineering, publications, presentations, teaching, education, and technical skills."
+showDate: false
+showReadingTime: false
 ---
 
 # Faith O. Oyedemi
@@ -95,6 +97,54 @@ benchmark design.
 [Selected articles]({{< relref "/posts" >}}) ·
 [Sampling Playground]({{< relref "/playground" >}})
 
+## Publication
+
+**Jelena Hađina, Boris Jukić, and Faith Oluwasegun Oyedemi.**
+“[Optimizing Network Communication Structure for Knowledge Transmission in
+Organizations](https://doi.org/10.1080/10919392.2025.2529064).”
+*Journal of Organizational Computing and Electronic Commerce*, 36(1), 1–30.
+Published online 10 August 2025.
+
+**Contribution:** Methodology and software. The study uses numerical simulation
+to examine how communication-network structure and individual information
+processing capacity affect knowledge transmission in organizations.
+
+## Talks and presentations
+
+### Canadian Association of Physicists Annual Congress
+
+**Contributed oral presentation · Ottawa, Canada · June 2026**
+
+Delivered a 10-minute research presentation at the 2026 CAP Annual Congress,
+co-hosted by the University of Ottawa and Carleton University.
+
+### BE-STEMM 2026
+
+**Upcoming poster presentation · Ottawa, Canada · 30 July–1 August 2026**
+
+Selected to present a research poster at the Canadian Black Scientists
+Network’s National Conference for Black Excellence in Science, Technology,
+Engineering, Mathematics, Medicine and Health.
+
+## Teaching and technical instruction
+
+### Guest lecture: MLP-Mixer architecture
+
+**Selected Topics in Physics · Mixed graduate/undergraduate course**
+
+Invited by the course instructor, based on my research specialization, to
+deliver an 80-minute lecture on the MLP-Mixer architecture to fourth-year
+physics students. The lecture developed the architecture from its token- and
+channel-mixing operations and connected the model to applications in physics.
+
+This guest lecture was separate from my regular teaching-assistant duties; I
+was not the course lecturer.
+
+## Research in progress
+
+An additional research manuscript is currently in preparation. Its title,
+authorship, and publication link will be added when the work becomes public.
+
 ## Education
 
 ### Doctor of Philosophy, Physics
@@ -111,9 +161,6 @@ numerical analysis, and high-performance computing.
 Coursework included statistical methods, databases, machine learning, data
 analytics, and quantitative modelling. The degree has been evaluated by World
 Education Services as equivalent to a Canadian master's degree.
-
-Publication: *Optimizing Network Communication Structure for Knowledge
-Transmission in Organizations*
 
 ### Master of Science, Physics
 

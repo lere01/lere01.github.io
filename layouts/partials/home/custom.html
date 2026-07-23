@@ -16,10 +16,10 @@
     {{ .Content }}
   </section>
 
-  <section class="qs-section">
-    <h2 class="qs-kicker">Projects</h2>
+  <section class="qs-section" id="featured-projects">
+    <h2 class="qs-kicker">Featured projects</h2>
     <div class="qs-cards">
-      {{ range hugo.Data.projects }}
+      {{ range first 3 hugo.Data.projects }}
         <div class="qs-card">
           <div class="qs-card-top">
             <span class="qs-card-name">{{ .name }}</span>
@@ -34,6 +34,7 @@
         </div>
       {{ end }}
     </div>
+    <a class="qs-chip qs-section-link" href="{{ "projects" | relURL }}">all projects →</a>
   </section>
 
   <section class="qs-section">

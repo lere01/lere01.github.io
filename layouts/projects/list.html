@@ -1,0 +1,51 @@
+{{ define "main" }}
+  <header class="qs-projects-hero">
+    <p class="qs-eyebrow">Selected technical work</p>
+    <h1>{{ .Title }}</h1>
+    <div class="qs-projects-intro">{{ .Content }}</div>
+  </header>
+
+  <section class="qs-project-portfolio" aria-label="Project portfolio">
+    {{ range $index, $project := hugo.Data.projects }}
+      <article class="qs-project-feature">
+        <div class="qs-project-index" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</div>
+
+        <div class="qs-project-main">
+          <div class="qs-project-heading">
+            <div>
+              <p class="qs-project-type">{{ $project.type }}</p>
+              <h2>{{ $project.name }}</h2>
+            </div>
+            <span class="qs-project-stack">{{ $project.lang }}</span>
+          </div>
+
+          <p class="qs-project-description">{{ $project.description }}</p>
+
+          {{ with $project.contribution }}
+            <div class="qs-project-contribution">
+              <span>Contribution</span>
+              <p>{{ . }}</p>
+            </div>
+          {{ end }}
+
+          {{ with $project.capabilities }}
+            <ul class="qs-project-capabilities">
+              {{ range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+          {{ end }}
+
+          <div class="qs-project-links">
+            {{ range $project.links }}
+              <a href="{{ .url }}">{{ .label }} <span aria-hidden="true">↗</span></a>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+    {{ end }}
+  </section>
+
+  <aside class="qs-project-cta">
+    <p>Interested in the research behind these tools?</p>
+    <a href="{{ "posts" | relURL }}">Explore the articles <span aria-hidden="true">→</span></a>
+  </aside>
+{{ end }}
