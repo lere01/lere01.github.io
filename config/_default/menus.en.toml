@@ -16,14 +16,19 @@
   weight = 10
 
 [[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 20
+
+[[main]]
   name = "Articles"
   pageRef = "posts"
-  weight = 20
+  weight = 30
 
 [[main]]
   name = "Sampling Playground"
   pageRef = "playground"
-  weight = 30
+  weight = 40
 
 # [[main]]
 #   name = "Categories"

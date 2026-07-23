@@ -10,7 +10,7 @@ tags:
 title: Parameter Sharing
 ---
 
-{{\< katex \>}}
+{{< katex >}}
 
 ## A Travel Back in Time
 
@@ -21,15 +21,15 @@ studying the cat's visual cortex \[1\]. They made several discoveries
 that would go on to shape practices across many fields, from medicine to
 machine learning.
 
-- Feature Detectors: They observed that specific neurons respond to
+- **Feature detectors:** They observed that specific neurons respond to
   specific visual stimuli. Some neurons would only fire when they
   detected a line at a particular orientation, for example, horizontal
   versus vertical. If you are familiar with a Convolutional Neural
   Network (CNN), then you have already seen this principle in action.
-- Columnar Organization: Neurons that responded to the same type of
+- **Columnar organization:** Neurons that responded to the same type of
   stimulus were grouped together, i.e., neurons were organized (by
   function) into columns within the visual cortex.
-- Ocular Dominance Columns: Some neurons primarily received input from
+- **Ocular-dominance columns:** Some neurons primarily received input from
   the left eye, while others were driven predominantly by the right eye.
 
 Not only did their findings open new pathways for understanding and
@@ -43,7 +43,7 @@ element of the network responded to a specific feature of the input
 pattern, such as brightness contrast, a dot in the pattern, or a line
 segment of a particular orientation.
 
-More than two decades later (1988), Homma, Atlas, and Marks introduced
+Nearly two decades later, Homma, Atlas, and Marks introduced
 the use of convolution as a means of generalizing the formal function of
 a neuron \[3\]. In the early 1990s, Yann LeCun's work on LeNet-5
 demonstrated the effectiveness of CNNs \[3\] and parameter sharing for
@@ -53,7 +53,7 @@ the approach both practical and accessible for machine learning
 applications.
 
 Since then, various neural architectures have continued to exploit this
-principle for its advantages, from recurrent neural networks (RNNs)
+principle, from recurrent neural networks (RNNs)
 \[4\] to transformers \[5\] and multilayer-perceptron mixers (Mixer)
 \[6\].
 
@@ -75,44 +75,43 @@ parameters in transformers; for Mixers, token-mixing MLPs share
 parameters across channels, while channel-mixing MLPs share parameters
 across tokens (patches). Two primary gains arise from this principle:
 
-- Data efficiency: A significantly reduced number of parameters implies
-  that less data is required for effective learning.
-- Useful inductive bias: Parameter sharing enforces translation, time,
+- **Data efficiency:** A significantly reduced number of parameters means
+  that less data may be required for effective learning.
+- **Useful inductive bias:** Parameter sharing encodes translation, time,
   or permutation invariance, which often leads to improved
   generalization.
 
 ## Implementations of Parameter Sharing
 
-Taxonomically, parameter sharing can be discussed in two lights. One is
-structural parameter sharing and the other, in the light of multitask
-learning. It is expedient at this point to clarify that in this article,
-we are discussing structural parameter sharing so phrases such as *'hard
-sharing'* or *'soft sharing'* will not be used. What we are discussing
-is symmetry-enforced weight reuse inside a single task. If you prefer to
-be formal, you can put it as
+Parameter sharing appears in two broad contexts: structural parameter
+sharing within a model and parameter sharing across tasks in multitask
+learning. This article focuses on structural sharing. Here, parameter
+sharing means symmetry-informed weight reuse within a single task. We can
+express the idea as
 
-\$\$ f(x)*i = \\phi*{\\theta}(x) \\forall ; i, \$\$
+$$
+f_i(x) = \phi_\theta(x), \qquad \forall i,
+$$
 
-where \$\\theta\$ represents the parameters applied at different
-coordinates \$i\$. I hope that this clarifies any confusion. We will now
-discuss some dominant forms. PyTorch will be used for demonstration.
+where the same parameters \(\theta\) are applied at different coordinates
+\(i\). We will now discuss some common forms, using PyTorch for demonstration.
 
 ### Spatial Sharing in the Convolutional Neural Network (CNN)
 
-The core principle in CNN is to apply the same filter (kernel) across
+The core principle of a CNN is to apply the same filter (kernel) across
 different spatial locations of the input data (usually \\(X \\in
 \\mathcal{R}\^{H \\times W \\times C} \\)). Unlike the case of a fully
-connected network where each neuron in a layer is connected to every
+connected network, in which each neuron in a layer is connected to every
 input pixel, the CNN slides a small filter all over the input volume. In
 this convolution process, a dot product produces a feature map. The
 important thing to note here is that the same set of filter
 (weights/parameters) is applied to every part of it. In other words,
-that particular kernel is looking for the occurence of a specific
-feature all over the image. It could be lines, dots, curves, colour etc.
+that particular kernel is looking for the occurrence of a specific
+feature throughout the image. It could respond to lines, dots, curves, or colour.
 Does this remind you of the visual cortex of a cat? It should. To
 demonstrate this, we will
 
-- Create some fictional grayscale image of shape (32,32,1);
+- Create a synthetic grayscale image of shape \((32, 32, 1)\);
 - Create a fully connected layer to deal with it;
 - Create a convolutional layer to deal with it;
 - Compare the parameters.
@@ -178,7 +177,7 @@ Total Parameters (weights + bias): 10
 ----------------------------------------
 ```
 
-#### Convfirming that the Same Weights Are Used
+#### Confirming That the Same Weights Are Used
 
 ``` python
 import torch
@@ -226,9 +225,26 @@ tensor([[12., 16.],
         [24., 28.]], grad_fn=<SelectBackward0>)
 ```
 
-## Useful Bias: Neural Quantum States as a Case in Study
+## Implications for Neural Quantum States
 
-## Downsides to Parameter Sharing
+For a neural quantum state, parameter sharing can encode a physical
+assumption directly in the architecture. A translation-equivariant model,
+for example, applies the same learned transformation across lattice sites.
+This can reduce the parameter count and improve sample efficiency when the
+Hamiltonian and target state possess the corresponding symmetry.
+
+The assumption must still match the problem. Boundaries, disorder, enlarged
+unit cells, and symmetry-broken phases can all make strict sharing too
+restrictive. Parameter sharing is therefore an inductive bias, not a guarantee
+of physical correctness.
+
+## Limitations
+
+Sharing parameters reduces flexibility as well as parameter count. If two
+locations or sequence positions play genuinely different roles, forcing them
+through the same transformation can cause underfitting. The right comparison
+is empirical: test the shared model against a less constrained baseline while
+controlling for parameter budget, optimization, and data or sample count.
 
 ------------------------------------------------------------------------
 

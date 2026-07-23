@@ -39,7 +39,7 @@ fingerprintAlgorithm = "sha256"
   recentLimit = 5
 
 [article]
-  showDate = false
+  showDate = true
   showDateUpdated = false
   showAuthor = false
   showBreadcrumbs = false
@@ -50,18 +50,18 @@ fingerprintAlgorithm = "sha256"
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
-  showReadingTime = false
-  showTableOfContents = false
-  showTaxonomies = false
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
   showWordCount = false
   showComments = false
   # sharingLinks = ["facebook", "x-twitter", "mastodon", "pinterest", "reddit", "linkedin", "email", "threads", "telegram", "line", "weibo", "xing", "bluesky"]
 
 [list]
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showTableOfContents = false
-  showTaxonomies = false
+  showTaxonomies = true
   groupByYear = true
   paginationWidth = 1
 

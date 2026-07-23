@@ -11,7 +11,7 @@ tags:
 
 {{< katex >}}
 
-Every neural network is a function. With non-linear activation, it can learn any class of funtions . Otherwise, it is one giant linear function no matter how many layers you stack. So, what is a *neural quantum state*? It is simply a neural network intended to learn a wave function. So instead of classifying an image or predicting the next word, it learns to represent the coefficients of a quantum state.
+Every neural network is a function. With nonlinear activations, it can learn a broad class of functions. Without them, it remains one large linear function, no matter how many layers we stack. So, what is a *neural quantum state*? It is a neural network trained to represent a wavefunction. Instead of classifying an image or predicting the next word, it learns the coefficients of a quantum state.
 
 That small change in job description opens a surprisingly large door.
 
@@ -39,7 +39,7 @@ $$
 
 where \\(\theta\\) denotes the trainable network parameters. The hope is not that every possible state becomes cheap. The hope is that **physically relevant** states possess enough structure for a network to compress them.
 
-This idea became widely known through the work of [Carleo and Troyer](https://doi.org/10.1126/science.aag2302), who represented quantum states with restricted Boltzmann machines and optimized them variationally. Neural networks have since been joined by recurrent models, Transformers, convolutional networks, and Mixers. This is in no way an exhaustive list.
+This idea became widely known through the work of [Carleo and Troyer](https://doi.org/10.1126/science.aag2302), who represented quantum states with restricted Boltzmann machines and optimized them variationally. The field has since adopted recurrent models, Transformers, convolutional networks, and Mixers, among other architectures.
 
 ## Probability is only half the wavefunction
 
@@ -49,7 +49,7 @@ $$
 p_\theta(\sigma)=\frac{|\psi_\theta(\sigma)|^2} {\langle\psi_\theta|\psi_\theta\rangle}.
 $$
 
-It is tempting to conclude that the network only needs to learn this probability distribution. That works for amplitudes and is sufficient for stoquastic hamiltonians. But in general, a wavefunction may also carry signs or complex phases. Therefore, a useful decomposition is
+It is tempting to conclude that the network only needs to learn this probability distribution. That works for amplitudes and is sufficient for stoquastic Hamiltonians. But in general, a wavefunction may also carry signs or complex phases. Therefore, a useful decomposition is
 
 $$
 \begin{align}
@@ -129,4 +129,3 @@ That is the laboratory behind the articles that follow.
 - [Carleo and Troyer, *Solving the quantum many-body problem with artificial neural networks*](https://doi.org/10.1126/science.aag2302)
 - [Carleo et al., *Machine learning and the physical sciences*](https://doi.org/10.1103/RevModPhys.91.045002)
 - [Sharir et al., *Deep autoregressive models for the efficient variational simulation of many-body quantum systems*](https://arxiv.org/abs/1902.04057)
-

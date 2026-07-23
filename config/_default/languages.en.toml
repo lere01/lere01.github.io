@@ -3,22 +3,23 @@ label = "English"
 direction = "ltr"
 weight = 1
 
-title = "Lere's Corner"
+title = "Faith O. Oyedemi"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 [params]
   dateFormat = "2 January 2006"
 
   # mainSections = ["section1", "section2"]
-  description = "Lere's Corner"
+  description = "Research software, quantum simulation, machine learning, and neuronal dynamics."
 
 [params.author]
   name = "Faith O. Oyedemi"
   image = "img/author_small.png"
-  headline = "Exploring Quantum Systems using Artificial Intelligence"
-  bio = "I Love Solving Problems"
+  headline = "Research Software · Quantum Simulation · Machine Learning"
+  bio = "Physics researcher and software developer based in Ottawa, Canada."
   links = [
     { email = "mailto:faithoyedemi@gmail.com" },
+    { github = "https://github.com/lere01" },
   #   { link = "https://link-to-some-website.com/" },
   #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
   #   { apple = "https://www.apple.com" },

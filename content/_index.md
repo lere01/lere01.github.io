@@ -1,11 +1,27 @@
-I investigate how complex physical systems can be understood through neural-network quantum states. My work blends physics, neuronal dynamics and machine learning, with the focus of achieving energy-efficient simulation of physical systems.
+I investigate how complex physical systems can be understood through
+neural-network quantum states. My work brings together physics, machine
+learning, neuronal dynamics, and scientific software, with a particular
+interest in accurate, reproducible, and energy-efficient simulation.
 
-This is a place where I explain the concepts I am working through: quantum models, numerical methods, architectures like Mixers, RNNs, and Transformers, and the broader tools that make scientific computing fast and reliable. I write for curious readers, technical or not, and for teams looking for someone who can solve deep problems and communicate them clearly
+My interest in **neuronal dynamics** includes spiking neural networks and the
+possibility of using event-driven computation to model physical systems more
+efficiently.
+
+This site is where I document the concepts, methods, and software behind my
+work—from quantum models and numerical methods to Mixers, recurrent neural
+networks, Transformers, Monte Carlo algorithms, and reliable research
+infrastructure.
+
+[About & résumé]({{< relref "/about" >}}) ·
+[GitHub](https://github.com/lere01) ·
+[Email](mailto:faithoyedemi@gmail.com)
 
 ---
 
-Beyond the  [research notes and articles]({{< relref "/posts" >}}), you can also explore a hands‑on **Sampling Playground**, where I host pretrained neural quantum state models. The playground allows you to draw Monte Carlo samples from these models, inspect configurations, and download the full dataset of samples. If you are curious about how these models behave or want to experiment with different Hamiltonians and lattice sizes, you can try it here:
+Beyond the [research notes and articles]({{< relref "/posts" >}}), you can
+explore the **Sampling Playground**, which hosts pretrained neural quantum
+state models. Draw Monte Carlo samples, inspect spin configurations, and
+download the resulting datasets. You can compare models across Hamiltonians,
+lattice sizes, and neural-network architectures.
 
 [→ Visit the Sampling Playground]({{< relref "/playground" >}})
-
----

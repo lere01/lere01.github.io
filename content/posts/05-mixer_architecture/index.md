@@ -1,6 +1,6 @@
 ---
 author: "Faith O. Oyedemi"
-title: "The Multi Layer-Perceptron as a Potential Neural Quantum State (Part One)"
+title: "The Multilayer Perceptron as a Potential Neural Quantum State (Part One)"
 date: "2025-11-15"
 tags: 
 - multi-layer perceptron
@@ -11,25 +11,25 @@ tags:
 
 ## A Short Timeline
 
-For a long time, the [convolutional neural network (CNN)](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf) was the state-of-the-art architecture for computer vision tasks. But the 2017 seminal paper *[Attention is All You Need](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)* introduced the scaled dot-product attention and thus, the transformer was born. Following this in 2021, the paper *[An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://openreview.net/forum?id=YicbFdNTTy)* proposed a way to apply the transformer architecture to computer vision (Vision Transformer - ViT). This has since provided a healthy competition and reduced the reliance on CNNs.
+For many years, the [convolutional neural network (CNN)](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf) dominated computer-vision tasks. The 2017 paper *[Attention Is All You Need](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)* introduced the Transformer and its scaled dot-product attention mechanism. In 2021, *[An Image Is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://openreview.net/forum?id=YicbFdNTTy)* showed how to apply a Transformer architecture to computer vision through the Vision Transformer (ViT). This development created a strong alternative to CNN-based vision systems.
 
-Note that the original transformer architecture was designed for natural language processing (NLP) tasks but it found use in computer vision. This has been a recurring theme where breakthroughs in one field inspire another field. So, it should not be a surprise to know that all of the aforementioned models have been extensively used by physicists in providing variational ansatz to the simulation of correlated systems. I digress.
+The original Transformer was designed for natural-language processing, but it soon found applications in computer vision. This is a recurring pattern: breakthroughs in one field inspire progress in another. Physicists have similarly adapted these architectures as variational ansätze for correlated quantum systems.
 
-In the same year, Tolstikhin et al. proved in their paper, *[MLP-Mixer: An all-MLP Architecture for Vision](https://proceedings.nips.cc/paper_files/paper/2021/file/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Paper.pdf)*, that while convolutions and self-attention are both sufficient for state-of-the-art performance, they are not necessary.
+In the same year, Tolstikhin et al. showed in *[MLP-Mixer: An All-MLP Architecture for Vision](https://proceedings.nips.cc/paper_files/paper/2021/file/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Paper.pdf)* that competitive vision performance did not strictly require either convolutions or self-attention.
 
 ---
 
 ## The Mixer
 
-They proposed the exclusive use of multi-layer perceptrons to bypass the two mechanisms in images. This proposed architecture mixes information in two stages — per-location features and spatial mixing. They called it the *MLP-Mixer* or *Mixer* for short. The entire architecture is composed of fully-connected layers, reshapes, transpositions, and scalar non-linearities. So, the most expensive operation is the matrix multiplication routine that you would find in your multi-layer perceptron. The process is:
+The authors proposed using multilayer perceptrons in place of both mechanisms. The architecture mixes information in two stages: across spatial locations and across feature channels. They called it the *MLP-Mixer*, or *Mixer* for short. It consists primarily of fully connected layers, reshaping, transposition, and element-wise nonlinearities. Its dominant operation is the matrix multiplication used by a multilayer perceptron. The process is:
 
-- Break up the input (image) into patches also called tokens;
-- Project the tokens into a higher dimensional representation;
-- Your input then takes on the shape "patches × channels" and maintains this dimensionality throughout;
-- The mixer contains two mixing layers — one for channel-mixing and another for token-mixing;
-- The output from the mixing goes into a classifier head.
+- Divide the input image into patches, also called tokens.
+- Project the tokens into a higher-dimensional representation.
+- Arrange the representation as patches × channels and preserve those dimensions throughout the Mixer blocks.
+- Apply one MLP across tokens and another across channels.
+- Send the mixed representation to a classification head.
 
-The diagram above shows the architecture. We will now look at what it looks like in code. I will be using the machine learning framework, [PyTorch](https://pytorch.org).
+We can now examine the architecture in [PyTorch](https://pytorch.org).
 
 ---
 
@@ -152,7 +152,7 @@ class Mixer(nn.Module):
         return logits
 ```
 
-I will show an example of how to use it with the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database). To run the code below, you will need (in addition to **torch**) to install **torchvision** and **tqdm**.
+The following example trains the model on the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database). In addition to **torch**, it requires **torchvision** and **tqdm**.
 
 ```python
 import torch
@@ -289,6 +289,6 @@ plt.legend()
 plt.show()
 ```
 
-![Diagram comparing the training and validation loss](result.png "Training the mixer model to learn mnist dataset")
+![Training and validation loss for the Mixer model](result.png "Training the Mixer model on MNIST")
 
-In the next episode, I would be discussing how we can potentially flip this model to study a quantum system.
+The next article will examine how this architecture can be adapted to represent a quantum system.
