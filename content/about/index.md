@@ -111,12 +111,14 @@ processing capacity affect knowledge transmission in organizations.
 
 ## Talks and presentations
 
-### Canadian Association of Physicists Annual Congress
+### [Autoregressive Mixers as Efficient Neural Quantum State for Ground State Search](https://indico.global/event/15553/contributions/149981/)
 
-**Contributed oral presentation · Ottawa, Canada · June 2026**
+**Contributed oral presentation · Canadian Association of Physicists Annual
+Congress · Ottawa, Canada · 23 June 2026**
 
-Delivered a 10-minute research presentation at the 2026 CAP Annual Congress,
-co-hosted by the University of Ottawa and Carleton University.
+Presented an autoregressive MLP-Mixer neural quantum state for ground-state
+search and benchmarked its accuracy and scalability across two-dimensional
+quantum systems. Co-authored with Stefanie Czischek.
 
 ### BE-STEMM 2026
 

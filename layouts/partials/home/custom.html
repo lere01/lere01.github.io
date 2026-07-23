@@ -16,6 +16,56 @@
     {{ .Content }}
   </section>
 
+  <section class="qs-section qs-demos" aria-labelledby="interactive-demos">
+    <div class="qs-section-heading">
+      <div>
+        <p class="qs-kicker">Run the software</p>
+        <h2 id="interactive-demos">Interactive demonstrations</h2>
+      </div>
+      <p>Explore the same ideas through working scientific software.</p>
+    </div>
+
+    <div class="qs-demo-grid">
+      <article class="qs-demo-card qs-demo-primary">
+        <div class="qs-demo-topline">
+          <span class="qs-demo-kind">Quantum Monte Carlo</span>
+          <span class="qs-demo-tech">Rust · WebAssembly</span>
+        </div>
+        <h3>SSE in your browser</h3>
+        <p>
+          Run the full stochastic-series-expansion engine without installing
+          anything. Estimate ground-state properties for transverse-field
+          Ising and Rydberg lattices up to 6×6 using the same implementation as
+          the command-line tool.
+        </p>
+        <div class="qs-demo-actions">
+          <a class="qs-demo-action" href="https://lere01.github.io/sse/demo/">
+            Launch SSE demo <span aria-hidden="true">→</span>
+          </a>
+          <a href="https://lere01.github.io/sse/">Read the guide</a>
+        </div>
+      </article>
+
+      <article class="qs-demo-card">
+        <div class="qs-demo-topline">
+          <span class="qs-demo-kind">Neural quantum states</span>
+          <span class="qs-demo-tech">Interactive sampling</span>
+        </div>
+        <h3>Sampling Playground</h3>
+        <p>
+          Draw Monte Carlo samples from pretrained neural quantum state models,
+          inspect spin configurations and observables, and download complete
+          datasets across several Hamiltonians and lattice sizes.
+        </p>
+        <div class="qs-demo-actions">
+          <a class="qs-demo-action" href="{{ "playground" | relURL }}">
+            Open the playground <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="qs-section" id="featured-projects">
     <h2 class="qs-kicker">Featured projects</h2>
     <div class="qs-cards">

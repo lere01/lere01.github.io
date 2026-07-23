@@ -15,13 +15,3 @@ infrastructure.
 [About & résumé]({{< relref "/about" >}}) ·
 [GitHub](https://github.com/lere01) ·
 [Email](mailto:faithoyedemi@gmail.com)
-
----
-
-Beyond the [research notes and articles]({{< relref "/posts" >}}), you can
-explore the **Sampling Playground**, which hosts pretrained neural quantum
-state models. Draw Monte Carlo samples, inspect spin configurations, and
-download the resulting datasets. You can compare models across Hamiltonians,
-lattice sizes, and neural-network architectures.
-
-[→ Visit the Sampling Playground]({{< relref "/playground" >}})
