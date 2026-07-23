@@ -2,7 +2,7 @@
 author: Faith O. Oyedemi
 title: "Neural Quantum States: Teaching a Network to Speak Wavefunction"
 date: 2025-12-03
-draft: true
+draft: false
 tags:
 - neural quantum states
 - variational Monte Carlo
