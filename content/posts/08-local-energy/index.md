@@ -2,7 +2,7 @@
 author: Faith O. Oyedemi
 title: "Local Energy: The Quantity That Makes Variational Monte Carlo Practical"
 date: 2025-12-17
-draft: true
+draft: false
 tags:
 - variational Monte Carlo
 - local energy
@@ -11,7 +11,7 @@ tags:
 
 {{< katex >}}
 
-The phrase *local energy* initially misled me. I assumed it meant the energy near one lattice site. It does not. It is local in configuration space: it tells us what energy the Hamiltonian assigns when we anchor the calculation at one sampled configuration.
+The phrase *local energy* does not mean the energy near one lattice site. It is local in configuration space: it tells us what energy the Hamiltonian assigns when we anchor the calculation at one sampled configuration.
 
 This quantity is the hinge that turns an exponentially large quantum expectation into a Monte Carlo estimate.
 
