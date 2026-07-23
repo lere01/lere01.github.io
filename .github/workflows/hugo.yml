@@ -32,8 +32,14 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: "0.163.3" # pinned: verified against Congo v2.14.0; "latest" broke on theme/Hugo drift
           extended: true
+
+      - name: Fetch design system
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/lere01/design/v0.1.0/ci/fetch-design.sh \
+            | sh -s -- v0.1.0 static/design
+          cp static/design/adapters/congo/qs.css assets/css/schemes/qs.css
 
       - name: Build site
         run: hugo --minify

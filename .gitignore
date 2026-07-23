@@ -1,5 +1,8 @@
 public/
 resources/
+# design system - fetched at a pinned tag by CI, never committed
+static/design/
+assets/css/schemes/qs.css
 .DS_Store
 commands.sh
 

@@ -1,0 +1,48 @@
+{{/* Portal homepage: hero, project cards from data/projects.yaml, recent
+     writing. Selected via homepage.layout = "custom" in params.toml;
+     styles live in assets/css/custom.css over the design tokens. */}}
+<article>
+  <header class="qs-hero">
+    {{ with .Site.Params.Author.image }}
+      {{ with resources.Get . }}
+        <img class="qs-hero-img" src="{{ .RelPermalink }}" alt="{{ site.Params.Author.name }}">
+      {{ end }}
+    {{ end }}
+    <h1 class="qs-hero-name">{{ .Site.Params.Author.name }}</h1>
+    <p class="qs-hero-headline">{{ .Site.Params.Author.headline }}</p>
+  </header>
+
+  <section class="prose dark:prose-invert qs-intro">
+    {{ .Content }}
+  </section>
+
+  <section class="qs-section">
+    <h2 class="qs-kicker">Projects</h2>
+    <div class="qs-cards">
+      {{ range hugo.Data.projects }}
+        <div class="qs-card">
+          <div class="qs-card-top">
+            <span class="qs-card-name">{{ .name }}</span>
+            {{ with .lang }}<span class="qs-card-lang">{{ . }}</span>{{ end }}
+          </div>
+          <p class="qs-card-desc">{{ .description }}</p>
+          <div class="qs-chips">
+            {{ range .links }}
+              <a class="qs-chip" href="{{ .url }}">{{ .label }}</a>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="qs-section">
+    <h2 class="qs-kicker">Recent writing</h2>
+    <ul class="qs-postlist">
+      {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    <a class="qs-chip" href="{{ "posts" | relURL }}">all articles →</a>
+  </section>
+</article>

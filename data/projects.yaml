@@ -1,0 +1,45 @@
+# Project cards on the homepage portal, rendered in order by
+# layouts/partials/home/custom.html. When a project joins, also add it to
+# the design system's nav (partials/nav.js there) and cut a design tag.
+- name: qslib
+  lang: Rust · Python
+  description: >-
+    Quantum simulation crate family — SSE quantum Monte Carlo, variational
+    diagnostics, deterministic seeding. Published to crates.io and PyPI.
+  links:
+    - label: guide
+      url: https://lere01.github.io/qslib/
+    - label: crates.io
+      url: https://crates.io/crates/qslib-quantum
+    - label: PyPI
+      url: https://pypi.org/project/qslib-quantum/
+    - label: source
+      url: https://github.com/lere01/qslib
+- name: sse
+  lang: Rust
+  description: >-
+    Stochastic series expansion QMC for transverse-field Ising and Rydberg
+    lattices — a thin CLI over qslib with reproducible run manifests.
+  links:
+    - label: guide
+      url: https://lere01.github.io/sse/
+    - label: API
+      url: https://lere01.github.io/sse/api/
+    - label: source
+      url: https://github.com/lere01/sse
+- name: sse demo
+  lang: WebAssembly
+  description: >-
+    The full SSE engine compiled to WebAssembly — ground-state estimates
+    for lattices up to 6×6 in the browser, bit-for-bit identical to the CLI.
+  links:
+    - label: launch
+      url: https://lere01.github.io/sse/demo/
+- name: sampling playground
+  lang: on this site
+  description: >-
+    Draw Monte Carlo samples from pretrained neural quantum state models,
+    inspect configurations, and download the datasets.
+  links:
+    - label: open
+      url: /playground/

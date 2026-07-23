@@ -1,3 +1,114 @@
+/* House skin over Congo, wired to the design system (github.com/lere01/design).
+   The color palette lives in assets/css/schemes/qs.css, copied at build
+   time from design/adapters/congo/. This file wires type and the portal
+   homepage.
+
+   Congo toggles dark mode with a `dark` class on <html>, independent of
+   prefers-color-scheme, so the --qs-* tokens are re-anchored to that
+   class here (overriding the media-query defaults in
+   design/tokens/tokens.css). Values mirror the tokens - grep the
+   adapters when the palette changes. */
+
+html:not(.dark) {
+  --qs-bg: #f7f7f5; --qs-surface: #ffffff; --qs-surface-2: #f0f0ee;
+  --qs-text: #1a1d23; --qs-text-soft: #5a6070; --qs-line: #e2e2df;
+  --qs-accent: #4f46e5; --qs-accent-soft: rgba(79, 70, 229, 0.14);
+  --qs-ok: #047857; --qs-warn: #b45309; color-scheme: light;
+}
+
+html.dark {
+  --qs-bg: #0b0e14; --qs-surface: #12161f; --qs-surface-2: #1a1f2b;
+  --qs-text: #e6e8ee; --qs-text-soft: #99a0b0; --qs-line: #232937;
+  --qs-accent: #818cf8; --qs-accent-soft: rgba(129, 140, 248, 0.16);
+  --qs-ok: #34d399; --qs-warn: #fbbf24; color-scheme: dark;
+}
+
+/* Type: Inter for everything, Instrument Serif for display headings,
+   system mono for code. Fonts load via layouts/partials/extend-head.html. */
+html {
+  font-family: var(--qs-sans, system-ui, sans-serif);
+}
+
+code, pre, kbd, samp {
+  font-family: var(--qs-mono, ui-monospace, monospace);
+}
+
+h1 {
+  font-family: var(--qs-display, Georgia, serif);
+  font-weight: 400 !important; /* the display face has no bold; stop faux-bolding */
+  letter-spacing: 0.005em;
+}
+
+/* The cross-site nav strip spans the viewport although Congo constrains
+   and pads <body>. */
+.qs-nav {
+  margin: 0 calc(50% - 50vw);
+  padding-left: max(22px, calc(50vw - 50%));
+  padding-right: max(22px, calc(50vw - 50%));
+}
+
+/* Portal homepage (layouts/partials/home/custom.html) */
+.qs-hero {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 26px 0 4px;
+}
+.qs-hero-img {
+  width: 96px; height: 96px; border-radius: 999px; margin-bottom: 14px;
+}
+.qs-hero-name {
+  font-size: clamp(34px, 5vw, 48px); line-height: 1.1; margin: 0;
+}
+.qs-hero-headline {
+  color: var(--qs-text-soft); font-size: 16px; margin: 8px 0 0;
+}
+
+.qs-intro { max-width: 46rem; margin: 0 auto; }
+
+.qs-section { margin-top: 34px; }
+
+.qs-kicker {
+  font-size: 13px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.09em; color: var(--qs-text-soft); margin: 0 0 12px;
+}
+
+.qs-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.qs-card {
+  background: var(--qs-surface); border: 1px solid var(--qs-line);
+  border-radius: 12px; padding: 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.qs-card-top {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+}
+.qs-card-name {
+  font-family: var(--qs-mono); font-weight: 600; font-size: 16px;
+  color: var(--qs-accent);
+}
+.qs-card-lang {
+  color: var(--qs-text-soft); font-size: 12px; white-space: nowrap;
+}
+.qs-card-desc {
+  font-size: 14.5px; line-height: 1.5; color: var(--qs-text); margin: 0; flex: 1;
+}
+
+.qs-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.qs-chip {
+  padding: 4px 12px; border: 1px solid var(--qs-line); border-radius: 999px;
+  font-size: 13px; color: var(--qs-text); text-decoration: none;
+}
+.qs-chip:hover {
+  border-color: var(--qs-accent); color: var(--qs-accent);
+  background: var(--qs-accent-soft);
+}
+
+.qs-postlist { list-style: none; padding: 0; margin: 0 0 12px; }
+.qs-postlist li { padding: 9px 0; border-bottom: 1px solid var(--qs-line); }
+.qs-postlist a { font-size: 16px; text-decoration: none; }
+
+/* Bibliography entries in articles */
 .csl-entry {
   margin-bottom: 0.5rem;
   font-size: 0.95em;
