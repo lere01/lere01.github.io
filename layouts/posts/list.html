@@ -1,0 +1,65 @@
+{{ define "main" }}
+  <header class="qs-articles-hero">
+    <p class="qs-eyebrow">Research notes</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="qs-articles-intro">{{ . }}</div>
+    {{ end }}
+  </header>
+
+  {{ if .Data.Pages }}
+    <section class="qs-article-archive" aria-label="Article archive">
+      {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+        <section class="qs-year-group" aria-labelledby="year-{{ .Key }}">
+          <div class="qs-year-heading">
+            <h2 id="year-{{ .Key }}">{{ .Key }}</h2>
+            <span>{{ len .Pages }} {{ if eq (len .Pages) 1 }}article{{ else }}articles{{ end }}</span>
+          </div>
+
+          <div class="qs-article-list">
+            {{ range .Pages }}
+              <article class="qs-article-row">
+                <div class="qs-article-date" aria-label="Published {{ .Date.Format "2 January 2006" }}">
+                  <span class="qs-article-day">{{ .Date.Format "02" }}</span>
+                  <span>{{ .Date.Format "Jan" }}</span>
+                </div>
+
+                <div class="qs-article-body">
+                  <div class="qs-article-meta">
+                    <span>{{ .ReadingTime }} min read</span>
+                    {{ if and .Draft .Site.Params.article.showDraftLabel }}
+                      <span class="qs-draft">Draft</span>
+                    {{ end }}
+                  </div>
+
+                  <h3>
+                    <a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a>
+                  </h3>
+
+                  {{ $excerpt := .RawContent | replaceRE `(?m)^#{1,6}\s+.*$` "" | replaceRE `(?s)\{\{<.*?>\}\}` "" | markdownify | plainify | htmlUnescape | strings.TrimSpace }}
+                  <p>{{ $excerpt | truncate 190 }}</p>
+
+                  {{ with .GetTerms "tags" }}
+                    <ul class="qs-article-tags" aria-label="Topics">
+                      {{ range first 3 . }}
+                        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                      {{ end }}
+                    </ul>
+                  {{ end }}
+                </div>
+
+                <a class="qs-article-arrow" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">
+                  <span aria-hidden="true">→</span>
+                </a>
+              </article>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    </section>
+
+    {{ partial "pagination.html" . }}
+  {{ else }}
+    <p class="qs-empty-state">No articles have been published yet.</p>
+  {{ end }}
+{{ end }}
