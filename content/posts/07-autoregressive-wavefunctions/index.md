@@ -2,7 +2,7 @@
 author: Faith O. Oyedemi
 title: "Autoregressive Wavefunctions: Building a Quantum State One Spin at a Time"
 date: 2025-12-10
-draft: true
+draft: false
 tags:
 - autoregressive models
 - neural quantum states
@@ -11,7 +11,7 @@ tags:
 
 {{< katex >}}
 
-Suppose I hand you a completed \\(8\times8\\) spin configuration and ask for its probability. That is one problem. Suppose instead I ask you to generate a new configuration distributed exactly according to a neural network. That is a different problem, and it is the second one that makes autoregressive wavefunctions special.
+Suppose I hand you a completed \\(8\times8\\) spin configuration and ask for its probability. That is one problem. Suppose instead I ask you to generate a new configuration distributed exactly according to a neural network. That is a different problem, and it is the second where autoregressive models excel.
 
 The idea comes from sequence modelling: turn one complicated joint distribution into a chain of simpler conditional decisions.
 
@@ -23,9 +23,9 @@ $$
 p(\sigma_1,\ldots,\sigma_N) = \prod_{i=1}^{N} p(\sigma_i\mid\sigma_{<i}),
 $$
 
-where \\(\sigma_{<i}\\) means all spins preceding site \\(i\\) in a chosen ordering.
+where \\(\sigma_{<i}\\) means all spins preceding site \\(i\\) in a chosen ordering. If you are interested in the probability chain rule (general product rule), you can see any introductory text to Probability.
 
-This identity is exact. The modelling decision is to let a neural network predict each conditional probability. For a spin-\\(\tfrac12\\) system, the network produces two non-negative numbers that sum to one.
+The identity above is exact. The modelling decision is to let a neural network predict each conditional probability. For a spin-\\(\tfrac12\\) system, the network produces two non-negative numbers that sum to one.
 
 Sampling then becomes almost embarrassingly direct:
 
@@ -36,9 +36,7 @@ for site in ordering:
     sample.append(draw(probabilities))
 ```
 
-There is no accept-reject step. A complete pass produces one exact sample from the distribution encoded by the model. Here, *exact* refers to the sampling procedure, not to the physical accuracy of the learned state.
-
-That distinction is worth keeping. A model can sample its own wrong answer perfectly.
+There is no accept-reject step. A complete pass produces one exact sample from the distribution encoded by the model. Here, *exact* refers to the sampling procedure, not to the physical accuracy of the learned state. That distinction is worth keeping. A model can sample its own wrong answer perfectly.
 
 ## From probability to wavefunction
 
@@ -56,7 +54,7 @@ $$
 
 Some models produce a phase contribution at each step; others use a separate global head after processing the full configuration. Either design is acceptable if `sample` and `logpsi` describe the same amplitude.
 
-This consistency sounds obvious until symmetry projection or constraints enter. If I evaluate a projected amplitude but sample from the unprojected state, the configurations are not distributed according to the probability used in my estimators. I then need a correct projected sampler or explicit importance weights. Otherwise, a beautifully implemented calculation answers the wrong expectation value.
+This consistency sounds obvious until symmetry projection or constraints come in. If I evaluate a projected amplitude but sample from the unprojected state, the configurations are not distributed according to the probability used in my estimators. I then need a correct projected sampler or explicit importance weights. Otherwise, a beautifully implemented calculation answers the wrong expectation value.
 
 ## A lattice is not naturally a sentence
 
@@ -72,7 +70,7 @@ or use a snake, spiral, space-filling curve, or symmetry-related ensemble of ord
 
 The final joint distribution can represent correlations in any direction, but the inductive bias is not neutral. A row-major RNN sees horizontal neighbours consecutively while many vertical neighbours are separated by an entire row. A Transformer can attend across that distance, but its causal mask still respects the chosen direction.
 
-In my code, site numbering is row-major unless a configuration says otherwise. This convention also determines how lattice sites map into basis-state bits. It is a mundane detail with physical consequences, which is why I prefer to record it rather than trust memory.
+In general, I stick to raster (row-major) ordering in my code. This convention also determines how lattice sites map into basis-state bits. It is a mundane detail with physical consequences, which is why I prefer to record it rather than trust memory.
 
 ## Constraints require conditional reasoning
 
@@ -102,7 +100,7 @@ The right question is therefore not merely “Can the model sample exactly?” I
 
 > Can the model sample the same wavefunction that it evaluates, under the correct physical constraints, at a cost that remains manageable as the lattice grows?
 
-That is the contract I use when comparing autoregressive architectures.
+This is **very important**.
 
 ## Further reading
 
