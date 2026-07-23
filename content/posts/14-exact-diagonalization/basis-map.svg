@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="260" viewBox="0 0 760 260" role="img" aria-labelledby="title desc">
+  <title id="title">Row-major lattice sites mapped to little-endian basis bits</title>
+  <desc id="desc">A two by three lattice with sites zero through five points to the corresponding powers of two in an integer basis state.</desc>
+  <style>
+    text { font-family: Inter, system-ui, sans-serif; fill: #1a1d23; }
+    .cell { fill: #f0f0ee; stroke: #4f46e5; stroke-width: 2; }
+    .arrow { stroke: #5a6070; stroke-width: 2; marker-end: url(#head); }
+    .bit { font-family: ui-monospace, monospace; font-size: 18px; }
+    .small { font-size: 14px; fill: #5a6070; }
+  </style>
+  <defs>
+    <marker id="head" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5a6070"/>
+    </marker>
+  </defs>
+  <text x="35" y="32" font-size="18" font-weight="600">row-major sites</text>
+  <g transform="translate(35 55)">
+    <rect class="cell" x="0" y="0" width="70" height="58" rx="8"/><text x="35" y="36" text-anchor="middle">0</text>
+    <rect class="cell" x="78" y="0" width="70" height="58" rx="8"/><text x="113" y="36" text-anchor="middle">1</text>
+    <rect class="cell" x="156" y="0" width="70" height="58" rx="8"/><text x="191" y="36" text-anchor="middle">2</text>
+    <rect class="cell" x="0" y="66" width="70" height="58" rx="8"/><text x="35" y="102" text-anchor="middle">3</text>
+    <rect class="cell" x="78" y="66" width="70" height="58" rx="8"/><text x="113" y="102" text-anchor="middle">4</text>
+    <rect class="cell" x="156" y="66" width="70" height="58" rx="8"/><text x="191" y="102" text-anchor="middle">5</text>
+  </g>
+  <line class="arrow" x1="285" y1="116" x2="410" y2="116"/>
+  <text x="470" y="32" font-size="18" font-weight="600">integer encoding</text>
+  <text class="bit" x="430" y="82">s = b₀2⁰ + b₁2¹ + ... + b₅2⁵</text>
+  <text class="bit" x="430" y="122">bits:  b₅ b₄ b₃ b₂ b₁ b₀</text>
+  <text class="bit" x="430" y="162">sites:  5  4  3  2  1  0</text>
+  <text class="small" x="430" y="202">site i occupies bit i</text>
+  <text class="small" x="35" y="230">The convention is arbitrary. Consistency across Hamiltonians, samples, and observables is not.</text>
+</svg>
+
