@@ -106,9 +106,3 @@ is generated output and should not be committed.
 ├── .github/workflows/       # GitHub Pages deployment
 └── Makefile                 # Development and publishing commands
 ```
-
-## Contact
-
-Faith O. Oyedemi<br>
-Ottawa, Ontario, Canada<br>
-[faithoyedemi@gmail.com](mailto:faithoyedemi@gmail.com)
