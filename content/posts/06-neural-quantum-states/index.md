@@ -52,10 +52,15 @@ $$
 It is tempting to conclude that the network only needs to learn this probability distribution. That works for amplitudes and is sufficient for stoquastic Hamiltonians. But in general, a wavefunction may also carry signs or complex phases. Therefore, a useful decomposition is
 
 $$
-\begin{align}
-\log\psi_\theta(\sigma) &= \sqrt{p_{\theta}(\sigma)} e^{i \phi_{\theta}(\sigma)} \\
- &= \frac{1}{2} \log p_\theta(\sigma)+i\phi_\theta(\sigma).
-\end{align}
+\begin{equation}
+\psi_\theta(\sigma) = \sqrt{p_{\theta}(\sigma)} \\; e^{i \phi_{\theta}(\sigma)},
+\end{equation}
+$$
+
+$$
+\begin{equation}
+\log\psi_\theta(\sigma) = \frac{1}{2} \log p_\theta(\sigma)+i\phi_\theta(\sigma).
+\end{equation}
 $$
 
 The first term controls how much probability a configuration receives. The phase \\(\phi_\theta\\) controls interference. Two states can assign exactly the same probabilities to every computational-basis configuration and still have different energies because their phases differ.

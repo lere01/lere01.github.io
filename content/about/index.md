@@ -95,7 +95,7 @@ Monte Carlo, model architecture, sampling, optimization, and reproducible
 benchmark design.
 
 [Selected articles]({{< relref "/posts" >}}) ·
-[Sampling Playground]({{< relref "/playground" >}})
+[Sampling Playground](/playground/)
 
 ## Publication
 
@@ -151,14 +151,14 @@ authorship, and publication link will be added when the work becomes public.
 
 ### Doctor of Philosophy, Physics
 
-**University of Ottawa · Canada · in progress, expected December 2026**
+**University of Ottawa · Canada · in progress**
 
 Focus: artificial intelligence for quantum systems, computational modelling,
 numerical analysis, and high-performance computing.
 
 ### Master of Science, Applied Data Science
 
-**Clarkson University · United States · May 2022**
+**Clarkson University · United States**
 
 Coursework included statistical methods, databases, machine learning, data
 analytics, and quantitative modelling. The degree has been evaluated by World
@@ -166,11 +166,11 @@ Education Services as equivalent to a Canadian master's degree.
 
 ### Master of Science, Physics
 
-**University of Ibadan · Nigeria · December 2015**
+**University of Ibadan · Nigeria**
 
 ### Bachelor of Science, Physics
 
-**University of Ibadan · Nigeria · November 2012**
+**University of Ibadan · Nigeria**
 
 ## Technical skills
 

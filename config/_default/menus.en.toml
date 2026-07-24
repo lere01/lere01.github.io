@@ -32,7 +32,7 @@
 
 [[main]]
   name = "Sampling Playground"
-  pageRef = "playground"
+  url = "/playground/"
   weight = 50
 
 # [[main]]
