@@ -63,11 +63,12 @@
   type: Machine-learning research tool
   lang: on this site
   description: >-
-    Draw Monte Carlo samples from pretrained neural quantum state models,
-    inspect configurations, and download the datasets.
+    Explore reproducible samples from neural quantum-state models I trained
+    using my custom Mixer-based architecture, inspect their physical
+    observables, and download the data.
   contribution: >-
-    Created an accessible interface for exploring the output of trained neural
-    quantum states without requiring a local research environment.
+    Designed and trained the models, then created an accessible interface for
+    exploring their output without requiring a local research environment.
   capabilities:
     - Multiple Hamiltonians, lattice sizes, and architectures
     - Configuration previews and observable summaries
