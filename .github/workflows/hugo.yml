@@ -42,6 +42,14 @@ jobs:
           mkdir -p assets/css/schemes
           cp static/design/adapters/congo/qs.css assets/css/schemes/qs.css
 
+      - name: Fetch sampling playground (nqs-web, pinned tag)
+        run: |
+          mkdir -p /tmp/nqsw static/playground
+          curl -sSfL https://codeload.github.com/lere01/nqs-web/tar.gz/refs/tags/v0.1.0 \
+            | tar -xz -C /tmp/nqsw
+          cp -R /tmp/nqsw/*/app/. static/playground/
+          cp -R /tmp/nqsw/*/banks static/playground/banks
+
       - name: Build site
         run: hugo --minify
 
