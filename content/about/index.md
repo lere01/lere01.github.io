@@ -122,7 +122,7 @@ quantum systems. Co-authored with Stefanie Czischek.
 
 ### BE-STEMM 2026
 
-**Upcoming poster presentation · Ottawa, Canada · 30 July–1 August 2026**
+**Poster presentation · Ottawa, Canada · 30 July–1 August 2026**
 
 Selected to present a research poster at the Canadian Black Scientists
 Network’s National Conference for Black Excellence in Science, Technology,
